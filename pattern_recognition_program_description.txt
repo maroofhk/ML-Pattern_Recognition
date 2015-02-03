@@ -1,0 +1,37 @@
+Pattern Recognition program
+
+Disclaimer: 
+- Initial project by Sentdex Forex pattern recognition program. 
+- Updated algorithm to make pattern match requirement more robust.
+- Streamlined code to avoid redundancies.
+
+Description of contents:
+
+avg_prediction_from_patt_recog_v5_14.py
+---------------------------------------
+
+- given text file has Forex bid and ask data for a month
+- data for comparison will be 0.5*(bid+ask)
+- pattern rely on percentage change of data from time (t) to (t+1)
+- currentPattern method will store the latest 30 points 
+- next we will store patterns for 30 consecutive points to predict result (t+30) in future
+- next will come pattern recognition. If percentage change is 30% in agreement then pattern will be accepted
+- For all 30 points if similarity is in 70% range we will accept the pattern
+- predicted outcome is calculated and matched to actual outcome
+- presently successful + conservative probility is 68% whereas failed prediction is ~32%
+
+pattern_recog_X.png files
+-------------------------
+
+- cyan bold curve is current trend
+- the other curves are one that are ~ 70% similar in trend to above one
+- points on right of curves are red if performance for each is below cyan pattern else it is green
+- rightmost two points show average prediction (dark blue point) vs. actual trend (cyan point)
+
+GBPUSD1d.txt
+------------
+
+- Forex data for one day where column description are as follows:
+  -- date
+  -- bid 
+  -- ask
